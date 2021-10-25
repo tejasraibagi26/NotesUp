@@ -13,7 +13,7 @@ import Note from "./Note";
 
 export default function MainPage() {
   const [notes, setNotes] = useState([]);
-  const [err, setErr] = useState("");
+  const [err, setErr] = useState("No notes found");
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [search, setSearch] = useState("");
