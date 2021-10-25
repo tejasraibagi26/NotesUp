@@ -64,7 +64,7 @@ export default function MainPage() {
     }
     console.log(title, content);
     axios
-      .post("http://localhost:5000/notes/add", {
+      .post("https://note-up-server.herokuapp.com/notes/add", {
         title: title,
         content: content,
       })
