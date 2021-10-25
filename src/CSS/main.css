@@ -1,0 +1,387 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap");
+
+:root {
+  --dark-bg: #121212;
+  --dark-side-bg: #1b1b1b;
+  --dark-card-bg: #333333;
+  --dark-text-color: #ffffff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* font-family: "Fira Sans", sans-serif; */
+  font-family: "Prompt", sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  height: 100vh;
+  background-color: var(--dark-side-bg);
+}
+
+.container .left-container {
+  width: 15%;
+  height: 100%;
+  background-color: var(--dark-bg);
+  /*box-shadow: 0px 0px 10px 1px rgba(51, 51, 51, 0.05);*/
+}
+
+.container .left-container .left-container-header {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  word-break: break-all;
+  color: var(--dark-text-color);
+  font-size: 1.4em;
+  margin-top: 10px;
+}
+
+.container .left-container .center-body {
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .left-container .center-body .left-container-body {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.container .left-container .center-body .left-container-body .circle {
+  width: 50px;
+  height: 50px;
+  background-color: rgb(88, 88, 255);
+  border-radius: 100%;
+  transition: 100ms;
+  cursor: pointer;
+}
+
+.icon {
+  width: 100%;
+  height: 100%;
+  color: white;
+  position: relative;
+  transition: 100ms ease-in-out;
+}
+
+.iconRotate {
+  transform: rotate(45deg);
+  background-color: red !important;
+}
+
+.setting,
+.about {
+  cursor: pointer;
+  /* width: 75%; */
+  height: auto;
+  padding: 10px;
+  color: gray;
+}
+
+.setting:hover,
+.about:hover {
+  background-color: rgb(88, 88, 255);
+  color: white;
+  border-radius: 5px;
+}
+
+.container .right-container {
+  width: 85%;
+  height: 100%;
+  margin: 0px 20px;
+}
+
+.container .right-container .searchbox {
+  width: 100%;
+  height: 8%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--dark-card-bg);
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px 1px rgba(51, 51, 51, 0.1);
+  color: var(--dark-text-color);
+}
+
+.container .right-container .searchbox .searchbox-input {
+  width: 90%;
+  height: 100%;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  color: var(--dark-text-color);
+}
+
+.search-btn {
+  width: 10%;
+  height: 100%;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 100ms ease-in-out;
+}
+
+.search-btn:hover {
+  color: rgb(88, 88, 255) !important;
+  transform: scale(1.1);
+  transform: skew(5deg);
+}
+
+.container .right-container .right-container-header {
+  /* margin-top: 20px; */
+  color: var(--dark-text-color);
+  font-size: 1.4em;
+}
+
+.container .right-container .right-container-body {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: start;
+  margin: 10px 0px;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.container .right-container .note-card {
+  /* max-width: 40%; */
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  background-color: var(--dark-card-bg);
+  border-radius: 5px;
+  color: black;
+  /* box-shadow: 1px 1px 10px 1px rgba(51, 51, 51, 0.1); */
+}
+
+.container .right-container .note-card .note-card-header {
+  width: 100%;
+  text-align: start;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 20px;
+  color: var(--dark-text-color);
+}
+
+.container .right-container .note-card .note-card-body {
+  width: 100%;
+  height: auto;
+  display: block;
+  padding: 5px 20px;
+  font-size: 15px;
+  word-break: break-all;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--dark-text-color);
+}
+
+.container .right-container .note-card .note-card-footer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  text-align: start;
+  padding: 5px 20px;
+  font-size: 15px;
+  color: gray;
+}
+
+.container .right-container .notes-add-container {
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  background-color: var(--dark-bg);
+  border-radius: 5px;
+  box-shadow: 0px 0px 100px 100px rgba(51, 51, 51, 0.5);
+}
+
+.container .right-container .notes-add-container .notes-add-header {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+  background-color: transparent;
+  color: var(--dark-text-color);
+}
+
+.container .right-container .notes-add-container .notes-add-body {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+
+.container .right-container .notes-add-container .notes-add-body .header-note {
+  width: 100%;
+  height: 15%;
+  border: none;
+  /* outline: solid 2px rgb(88, 88, 255); */
+  padding: 10px;
+  background-color: var(--dark-card-bg);
+  color: var(--dark-text-color);
+  border-radius: 5px;
+}
+
+.container .right-container .notes-add-container .notes-add-textarea {
+  min-width: 100%;
+  height: calc(100% - 15%);
+  justify-content: start;
+  align-items: start;
+  font-size: 15px;
+  border: none;
+  resize: none;
+  padding: 10px;
+  background-color: var(--dark-card-bg);
+  color: var(--dark-text-color);
+  border-radius: 5px;
+  margin-top: 10px;
+  /* outline: solid 2px rgb(88, 88, 255); */
+}
+
+.container .right-container .notes-add-container .addButton {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: white;
+  background-color: rgb(88, 88, 255);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 100ms ease-in-out;
+  margin-top: 20px;
+}
+
+.container .right-container .note-card:hover {
+  background-color: rgb(88, 88, 255);
+}
+
+textarea:focus,
+input:focus {
+  border: none;
+  outline: none;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.note-anim {
+  animation: fadeUp 100ms linear;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.errMsg {
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+.alt-web-name {
+  visibility: hidden;
+  color: var(--dark-text-color);
+}
+
+.alt-add {
+  visibility: hidden;
+}
+/* Media Queries */
+
+@media screen and (min-width: 800px) and (max-width: 1200px) {
+  .container .left-container .left-container-header {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  * {
+    overflow: auto;
+  }
+
+  .container .left-container,
+  .container .left-container .left-container-body .circle {
+    display: none;
+  }
+  .container .right-container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .container .right-container .note-card {
+    max-width: 100% !important;
+  }
+
+  .alt-web-name {
+    visibility: visible;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    transition: all;
+    color: var(--dark-text-color);
+  }
+
+  .notes-add-container {
+    width: 75%;
+  }
+
+  .alt-add {
+    cursor: pointer;
+    visibility: visible;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgb(88, 88, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    transition: 100ms ease-in-out;
+  }
+}
