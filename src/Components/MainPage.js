@@ -25,7 +25,9 @@ export default function MainPage() {
   async function fetchData() {
     setNotes([]);
     try {
-      const { data } = await axios.get("http://localhost:5000/notes");
+      const { data } = await axios.get(
+        "https://note-up-server.herokuapp.com/notes"
+      );
       console.log(data);
       if (data === null) {
         setErr("No notes found");
