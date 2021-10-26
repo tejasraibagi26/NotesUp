@@ -29,10 +29,11 @@ export default function MainPage() {
         "https://note-up-server.herokuapp.com/notes",
         {
           headers: {
-            content: "application/json",
+            "Content-Type": "application/json",
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Headers":
               "Origin, X-Requested-With, Content-Type, Accept",
+            "Access-Control-Allow-Credentials": true,
           },
         }
       );
