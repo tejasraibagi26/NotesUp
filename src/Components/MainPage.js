@@ -26,14 +26,7 @@ export default function MainPage() {
     setNotes([]);
     try {
       const { data } = await axios.get(
-        "https://note-up-server.herokuapp.com/notes",
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-            origin: "*",
-          },
-        }
+        "https://note-up-server.herokuapp.com/notes"
       );
       console.log(data);
       if (data === null) {

@@ -11,14 +11,7 @@ export default function NoteData() {
   const getDataById = async () => {
     const id = window.location.pathname.split("/")[2];
     const { data } = await axios.get(
-      `https://note-up-server.herokuapp.com/notes/${id}`,
-      {
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-          origin: "*",
-        },
-      }
+      `https://note-up-server.herokuapp.com/notes/${id}`
     );
     setNote(data);
   };
