@@ -25,9 +25,14 @@ export default function MainPage() {
   async function fetchData() {
     setNotes([]);
     try {
-      const { data } = await axios.get(
-        "https://note-up-server.herokuapp.com/notes"
-      );
+      let data;
+      await axios
+        .get("https://note-up-server.herokuapp.com/notes")
+        .then((res) => {
+          console.log(res.data);
+          data = res.data;
+        })
+        .catch((err) => {});
       console.log(data);
       if (data === null) {
         setErr("No notes found");
@@ -67,10 +72,6 @@ export default function MainPage() {
       .post("https://note-up-server.herokuapp.com/notes/add", {
         title: title,
         content: content,
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-        },
       })
       .then((res) => {
         console.log(res);

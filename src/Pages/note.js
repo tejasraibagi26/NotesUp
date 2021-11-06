@@ -6,13 +6,20 @@ export default function NoteData() {
 
   useEffect(() => {
     getDataById();
-  });
+  }, []);
 
   const getDataById = async () => {
     const id = window.location.pathname.split("/")[2];
-    const { data } = await axios.get(
-      `https://note-up-server.herokuapp.com/notes/${id}`
-    );
+    let data;
+    await axios
+      .get(`https://note-up-server.herokuapp.com/notes/${id}`)
+      .then((res) => {
+        console.log(res.data);
+        data = res.data;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     setNote(data);
   };
 
