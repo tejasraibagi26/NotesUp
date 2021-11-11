@@ -27,7 +27,12 @@ export default function MainPage() {
     try {
       let data;
       await axios
-        .get("https://note-up-server.herokuapp.com/notes")
+        .get("https://note-up-server.herokuapp.com/notes", {
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+          },
+        })
         .then((res) => {
           console.log(res.data);
           data = res.data;
