@@ -69,10 +69,19 @@ export default function MainPage() {
     }
     console.log(title, content);
     axios
-      .post("https://note-up-server.herokuapp.com/notes/add", {
-        title: title,
-        content: content,
-      })
+      .post(
+        "https://note-up-server.herokuapp.com/notes/add",
+        {
+          title: title,
+          content: content,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+          },
+        }
+      )
       .then((res) => {
         console.log(res);
         fetchData();
